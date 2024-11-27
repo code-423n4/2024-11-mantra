@@ -263,10 +263,6 @@ N/A
 
 ## Running tests
 
-go mod tidy
-make test
-
-
 ```bash
 git clone --recurse https://github.com/code-423n4/2024-11-mantra.git 
 cd 2024-11-mantra
