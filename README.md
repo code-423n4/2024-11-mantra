@@ -17,111 +17,209 @@ Two important notes about judging phase risk adjustments:
 
 As such, wardens are encouraged to select the appropriate risk level carefully during the submission phase.
 
-## Automated Findings / Publicly Known Issues
+## Publicly Known Issues
 
-The 4naly3er report can be found [here](https://github.com/code-423n4/2024-11-mantra/blob/main/4naly3er-report.md).
-
-_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
+_Note for C4 wardens: Anything included in this `Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 Issues directly related to cosmos-sdk, IBC, cosmwasm and their dependencies (comet-bft) will not be within the scope of this audit. Basically if it is a issue affecting all cosmos chains of the same versions then it should be out of scope.
 
 However, if the issue arise from the custom code we made on our cosmos-sdk, or if the issues are directly affecting behavior of our custom modules, or if our custom modules are causing issues in the base cosmos modules (includes cosmwasm and IBC) then they should be included in the scope.
 
-
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
-
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+Mantrachain is a global real-world assets platform built on blockchain technology. It leverages advanced blockchain features to facilitate the tokenization and trading of real-world assets.
+
+Features:
+
+- Real-world asset tokenization
+- Advanced blockchain technology integration
+- Multi-token support for transaction fees
+- Custom fee market implementation
+- Cosmos SDK-based architecture
 
 ## Links
 
-- **Previous audits:**  Ottersec, don't think report is public.
-  - ✅ SCOUTS: If there are multiple report links, please format them in a list.
+- **Previous audits:**  Ottersec (report isn't public)
 - **Documentation:** https://github.com/MANTRA-Chain/mantrachain/tree/v1.0.2
 - **Website:** https://www.mantrachain.io/
 - **X:** https://twitter.com/MANTRA_Chain
 
 ---
 
+
 # Scope
 
-[ ✅ SCOUTS: add scoping and technical details here ]
+*See [scope.txt](https://github.com/code-423n4/2024-11-mantra/blob/main/scope.txt)*
 
-### Files in scope
-- ✅ This should be completed using the `metrics.md` file
-- ✅ Last row of the table should be Total: SLOC
-- ✅ SCOUTS: Have the sponsor review and and confirm in text the details in the section titled "Scoping Q amp; A"
-
-*For sponsors that don't use the scoping tool: list all files in scope in the table below (along with hyperlinks) -- and feel free to add notes to emphasize areas of focus.*
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
-
-### Files out of scope
-✅ SCOUTS: List files/directories out of scope
+File                                                                  |      code
+----------------------------------------------------------------------|----------
+api/osmosis/tokenfactory/v1beta1/tx.pulsar.go                         |      6442
+x/tokenfactory/types/tx.pb.go                                         |      3431
+api/osmosis/tokenfactory/v1beta1/query.pulsar.go                      |      3145
+api/mantrachain/xfeemarket/v1/tx.pulsar.go                            |      2334
+x/tokenfactory/types/query.pb.go                                      |      1677
+x/xfeemarket/types/tx.pb.go                                           |      1304
+api/osmosis/tokenfactory/v1beta1/genesis.pulsar.go                    |      1132
+api/mantrachain/xfeemarket/v1/genesis.pulsar.go                       |      1028
+app/app.go                                                            |       960
+x/xfeemarket/post/mocks/mock_bank_keeper.go                           |       920
+api/mantrachain/tax/v1/tx.pulsar.go                                   |       883
+api/mantrachain/xfeemarket/v1/query.pulsar.go                         |       760
+api/mantrachain/tax/v1/query.pulsar.go                                |       754
+x/xfeemarket/post/fee_test.go                                         |       682
+x/tokenfactory/types/genesis.pb.go                                    |       662
+api/osmosis/tokenfactory/v1beta1/params.pulsar.go                     |       654
+api/osmosis/tokenfactory/params.pulsar.go                             |       649
+api/mantrachain/tax/v1/params.pulsar.go                               |       593
+x/tax/types/tx.pb.go                                                  |       581
+x/xfeemarket/types/genesis.pb.go                                      |       575
+api/osmosis/tokenfactory/module/v1/module.pulsar.go                   |       568
+x/xfeemarket/types/query.pb.go                                        |       483
+x/tax/types/query.pb.go                                               |       481
+cmd/mantrachaind/cmd/testnet.go                                       |       471
+api/mantrachain/tax/v1/genesis.pulsar.go                              |       458
+api/osmosis/tokenfactory/v1beta1/authorityMetadata.pulsar.go          |       446
+api/mantrachain/xfeemarket/module/v1/module.pulsar.go                 |       445
+api/mantrachain/tax/module/v1/module.pulsar.go                        |       442
+x/tax/types/params.pb.go                                              |       426
+x/tokenfactory/types/v1beta1/params.pb.go                             |       403
+x/tokenfactory/types/params.pb.go                                     |       401
+x/tokenfactory/types/query.pb.gw.go                                   |       376
+api/mantrachain/xfeemarket/v1/params.pulsar.go                        |       369
+api/osmosis/tokenfactory/v1beta1/tx_grpc.pb.go                        |       329
+x/tokenfactory/types/authorityMetadata.pb.go                          |       321
+app/test_helpers.go                                                   |       308
+x/xfeemarket/post/suite/suite.go                                      |       302
+x/tax/types/genesis.pb.go                                             |       296
+x/xfeemarket/types/params.pb.go                                       |       264
+x/tokenfactory/types/msgs.go                                          |       251
+x/tokenfactory/client/cli/tx.go                                       |       224
+x/tokenfactory/keeper/msg_server.go                                   |       216
+api/osmosis/tokenfactory/v1beta1/query_grpc.pb.go                     |       185
+app/export.go                                                         |       176
+cmd/mantrachaind/cmd/commands.go                                      |       171
+x/tax/module/genesis_test.go                                          |       169
+x/xfeemarket/post/mocks/mock_feemarket_keeper.go                      |       154
+api/mantrachain/xfeemarket/v1/tx_grpc.pb.go                           |       149
+x/xfeemarket/module/module.go                                         |       149
+x/tokenfactory/module.go                                              |       145
+x/tax/module/module.go                                                |       143
+x/xfeemarket/post/fee.go                                              |       141
+tests/connect/connect_integration_test.go                             |       128
+x/tokenfactory/client/cli/query.go                                    |       126
+x/tokenfactory/keeper/before_send.go                                  |       108
+app/oracle.go                                                         |       107
+x/tax/types/query.pb.gw.go                                            |       107
+x/xfeemarket/types/query.pb.gw.go                                     |       107
+app/queries/queries.go                                                |        99
+x/tax/types/genesis_test.go                                           |        93
+x/tax/keeper/msg_update_params_test.go                                |        87
+app/ante.go                                                           |        85
+cmd/mantrachaind/cmd/root.go                                          |        85
+x/tokenfactory/keeper/createdenom.go                                  |        82
+x/tokenfactory/keeper/bankactions.go                                  |        81
+x/tokenfactory/types/params.go                                        |        79
+x/xfeemarket/module/simulation.go                                     |        79
+api/mantrachain/tax/v1/query_grpc.pb.go                               |        77
+api/mantrachain/tax/v1/tx_grpc.pb.go                                  |        77
+api/mantrachain/xfeemarket/v1/query_grpc.pb.go                        |        77
+x/tax/keeper/keeper.go                                                |        75
+x/tax/types/params.go                                                 |        74
+app/genesis.go                                                        |        66
+x/tokenfactory/keeper/keeper.go                                       |        66
+x/tokenfactory/keeper/genesis.go                                      |        59
+x/xfeemarket/keeper/msg_update_params_test.go                         |        57
+x/xfeemarket/keeper/keeper.go                                         |        52
+testutil/nullify/nullify.go                                           |        49
+app/params/config.go                                                  |        46
+testutil/keeper/tax.go                                                |        46
+x/xfeemarket/module/genesis.go                                        |        46
+testutil/keeper/xfeemarket.go                                         |        45
+x/tokenfactory/types/denoms.go                                        |        45
+x/tokenfactory/types/genesis.go                                       |        44
+x/xfeemarket/keeper/msg_server_fee_denom.go                           |        44
+x/tax/keeper/msg_update_params.go                                     |        43
+x/tax/module/autocli.go                                               |        42
+x/xfeemarket/module/autocli.go                                        |        41
+cmd/mantrachaind/cmd/config.go                                        |        38
+x/tax/types/msg_update_params.go                                      |        38
+app/params/weights.go                                                 |        37
+x/tax/module/simulation.go                                            |        36
+x/tokenfactory/keeper/admins.go                                       |        36
+x/tokenfactory/types/codec.go                                         |        36
+app/params/proto.go                                                   |        35
+x/xfeemarket/types/genesis_test.go                                    |        35
+x/tokenfactory/keeper/grpc_query.go                                   |        33
+x/tokenfactory/types/keys.go                                          |        32
+app/test_support.go                                                   |        31
+x/tokenfactory/types/expected_keepers.go                              |        30
+x/xfeemarket/keeper/resolver.go                                       |        29
+x/tokenfactory/types/tx.go                                            |        28
+testutil/network/network.go                                           |        27
+x/tax/module/abci.go                                                  |        27
+x/xfeemarket/types/message_upsert_fee_denom.go                        |        27
+app/post_handler.go                                                   |        26
+x/tokenfactory/keeper/params.go                                       |        24
+app/encoding.go                                                       |        23
+x/tax/keeper/query_params.go                                          |        23
+x/xfeemarket/types/genesis.go                                         |        23
+x/tokenfactory/keeper/creators.go                                     |        22
+x/xfeemarket/keeper/query_params.go                                   |        22
+x/xfeemarket/module/genesis_test.go                                   |        22
+x/xfeemarket/simulation/remove_fee_denom.go                           |        22
+x/xfeemarket/simulation/upsert_fee_denom.go                           |        22
+x/tokenfactory/types/before_send.go                                   |        20
+x/tokenfactory/types/errors.go                                        |        19
+x/xfeemarket/keeper/msg_update_params.go                              |        19
+x/tax/module/genesis.go                                               |        18
+x/xfeemarket/post/expected_keepers.go                                 |        18
+x/xfeemarket/types/codec.go                                           |        18
+x/xfeemarket/types/keys.go                                            |        18
+x/tax/keeper/query_params_test.go                                     |        17
+x/xfeemarket/keeper/query_params_test.go                              |        17
+x/xfeemarket/types/default_resolver.go                                |        17
+x/xfeemarket/types/message_remove_fee_denom.go                        |        17
+cmd/mantrachaind/main.go                                              |        16
+x/xfeemarket/types/expected_keepers.go                                |        16
+app/wasm.go                                                           |        15
+x/tokenfactory/types/events.go                                        |        15
+x/tokenfactory/types/authorityMetadata.go                             |        13
+app/params/encoding.go                                                |        12
+x/tax/types/codec.go                                                  |        12
+x/tax/types/expected_keepers.go                                       |        12
+x/xfeemarket/simulation/helpers.go                                    |        12
+x/tax/keeper/msg_server.go                                            |        11
+x/tax/keeper/query.go                                                 |        11
+x/tax/types/keys.go                                                   |        11
+x/xfeemarket/keeper/msg_server.go                                     |        11
+x/xfeemarket/keeper/query.go                                          |        11
+app/proposals_whitelisting.go                                         |        10
+testutil/sample/sample.go                                             |        10
+tools/tools.go                                                        |        10
+x/tax/types/genesis.go                                                |        10
+x/xfeemarket/types/params.go                                          |        10
+client/docs/statik/statik.go                                          |         8
+x/tax/types/errors.go                                                 |         8
+x/xfeemarket/types/errors.go                                          |         7
+x/tax/types/events.go                                                 |         5
+x/tokenfactory/types/constants.go                                     |         3
+scripts/ci-goreleaser/goreleaser.go                                   |         2
+app/params/doc.go                                                     |         1
+client/docs/statik/init.go                                            |         1
+x/tax/types/types.go                                                  |         1
+SUM:                                                                  |     42898
 
 ## Scoping Q &amp; A
 
 ### General questions
-### Are there any ERC20's in scope?: No
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-
-
-
-### Are there any ERC777's in scope?: 
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-
-
-### Are there any ERC721's in scope?: No
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-
-
-### Are there any ERC1155's in scope?: No
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-
-
-✅ SCOUTS: Once done populating the table below, please remove all the Q/A data above.
 
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
-| ERC20 used by the protocol              |       🖊️             |
-| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
-| ERC721 used  by the protocol            |            🖊️              |
-| ERC777 used by the protocol             |           🖊️                |
-| ERC1155 used by the protocol            |              🖊️            |
-| Chains the protocol will be deployed on | OtherMANTRA Chain  |
-
-### ERC20 token behaviors in scope
-
-| Question                                                                                                                                                   | Answer |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| [Missing return values](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#missing-return-values)                                                      |    |
-| [Fee on transfer](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#fee-on-transfer)                                                                  |   |
-| [Balance changes outside of transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#balance-modifications-outside-of-transfers-rebasingairdrops) |    |
-| [Upgradeability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#upgradable-tokens)                                                                 |    |
-| [Flash minting](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#flash-mintable-tokens)                                                              |    |
-| [Pausability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#pausable-tokens)                                                                      |    |
-| [Approval race protections](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#approval-race-protections)                                              |    |
-| [Revert on approval to zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-approval-to-zero-address)                            |    |
-| [Revert on zero value approvals](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-approvals)                                    |    |
-| [Revert on zero value transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                    |    |
-| [Revert on transfer to the zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-transfer-to-the-zero-address)                    |    |
-| [Revert on large approvals and/or transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-large-approvals--transfers)                  |    |
-| [Doesn't revert on failure](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#no-revert-on-failure)                                                   |    |
-| [Multiple token addresses](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                          |    |
-| [Low decimals ( < 6)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#low-decimals)                                                                 |    |
-| [High decimals ( > 18)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#high-decimals)                                                              |    |
-| [Blocklists](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#tokens-with-blocklists)                                                                |    |
+| ERC20 used by the protocol              |      N/A  |
+| ERC721 used  by the protocol            |      N/A        |
+| ERC777 used by the protocol             |      N/A         |
+| ERC1155 used by the protocol            |      N/A        |
+| Chains the protocol will be deployed on | MANTRA Chain  |
 
 ### External integrations (e.g., Uniswap) behavior in scope:
 
@@ -136,14 +234,6 @@ However, if the issue arise from the custom code we made on our cosmos-sdk, or i
 ### EIP compliance checklist
 N/A
 
-✅ SCOUTS: Please format the response above 👆 using the template below👇
-
-| Question                                | Answer                       |
-| --------------------------------------- | ---------------------------- |
-| src/Token.sol                           | ERC20, ERC721                |
-| src/NFT.sol                             | ERC721                       |
-
-
 # Additional context
 
 ## Main invariants
@@ -152,61 +242,38 @@ Tokenfactory
 - The user that created a token is the token admin of that token
 - Only token admin can force transfer and mint tokens
 
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
 ## Attack ideas (where to focus for bugs)
 We have a custom tokenfactory module. We are concerned to see if this module can be exploited to have unintended behavior such as:
 - minting by users not the token admin
 - force transfer of tokens not done by token admin
 
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
 ## All trusted roles in the protocol
 
-mostly permissionless. Some functionalities are only invoked by governance through proposals and voting.
+Mostly permissionless. 
 
-✅ SCOUTS: Please format the response above 👆 using the template below👇
+Some functionalities are only invoked by governance through proposals and voting.
 
-| Role                                | Description                       |
-| --------------------------------------- | ---------------------------- |
-| Owner                          | Has superpowers                |
-| Administrator                             | Can change fees                       |
 
 ## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
 
 N/A
 
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
 ## Running tests
 
 go mod tidy
 make test
 
-No gas report
-
-✅ SCOUTS: Please format the response above 👆 using the template below👇
 
 ```bash
-git clone https://github.com/code-423n4/2023-08-arbitrum
-git submodule update --init --recursive
-cd governance
-foundryup
+git clone --recurse https://github.com/code-423n4/2024-11-mantra.git 
+cd 2024-11-mantra
+go mod tidy
 make install
-make build
-make sc-election-test
+make test
 ```
-To run code coverage
-```bash
-make coverage
-```
-To run gas benchmarks
-```bash
-make gas
-```
-
-✅ SCOUTS: Add a screenshot of your terminal showing the gas report
-✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
 
 ## Miscellaneous
 Employees of MANTRA and employees' family members are ineligible to participate in this audit.
@@ -214,26 +281,4 @@ Employees of MANTRA and employees' family members are ineligible to participate 
 Code4rena's rules cannot be overridden by the contents of this README. In case of doubt, please check with C4 staff.
 
 
-
-
-
-# Scope
-
-*See [scope.txt](https://github.com/code-423n4/2024-11-mantra/blob/main/scope.txt)*
-
-### Files in scope
-
-
-| File   | Logic Contracts | Interfaces | nSLOC | Purpose | Libraries used |
-| ------ | --------------- | ---------- | ----- | -----   | ------------ |
-
-| **Totals** | **** | **** | **undefined** | | |
-
-### Files out of scope
-
-*See [out_of_scope.txt](https://github.com/code-423n4/2024-11-mantra/blob/main/out_of_scope.txt)*
-
-| File         |
-| ------------ |
-| Totals: 0 |
 
