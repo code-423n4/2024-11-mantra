@@ -1,0 +1,333 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-PUBLIC / mantra-chain-nov
+==============================================================
+
+[11/26/2024 21:25] cloudellie
+👋 Hello and welcome to the** $60,000 in USDC MANTRA Chain** audit channel!
+
+📆 Audit opens Friday, 29 November 2024 (20:00 UTC) and runs through Monday, 06 January 2025 (20:00 UTC) (38 days).
+
+Please give a warm welcome to the MANTRA team, particularly @Delroy, @jvr0x, and @mantra_man , who will be available for questions either here in the channel or via a PRIVATE thread. You can expect them to be available in Europe & Asia time zones. 
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  *Docs Wolf will be available when the audit is live.*
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-11-mantra-chain
+
+{Reactions}
+👀 (4) 
+
+[11/29/2024 20:31] mylifechangefast.eth_70767
+Bloody codebase ryy😅
+
+
+[12/01/2024 09:35] gxh6709
+I would like to ask, I submitted a potentially sensitive issue for Mantra Chain - disclosed privately, but I couldn't find the private threads in Discord.
+
+
+[12/01/2024 20:27] 0xstalin
+cc: @CloudEllie
+
+{Reactions}
+thankyou ✅ 
+
+[12/01/2024 21:48] cloudellie
+responded privately, thanks
+
+{Reactions}
+👍 
+
+[12/03/2024 12:13] gxh6709
+Can only one vulnerability with a severity of QA be submitted?
+
+
+[12/03/2024 13:15] 0xsorrynotsorry
+Yes
+
+{Reactions}
+👍 
+
+[12/03/2024 13:45] gxh6709
+Does a QA report only allow one vulnerability to be included, rather than multiple?
+
+
+[12/03/2024 13:55] 0xsorrynotsorry
+that´s also possible.
+So the warden can send only 1 QA report that includes 1 issue only.
+But that doesn´t sound logical due to  only the top 3 QA reports are  subject to have rewards
+
+{Reactions}
+👍 
+
+[12/03/2024 14:27] gxh6709
+oh i see
+
+
+[12/09/2024 02:38] p0wd3r_
+@Delroy @mantra_man What's the fee denom for the fee market, OM?
+
+
+[12/09/2024 07:51] del.roy
+`uom`
+
+{Reactions}
+👌 
+
+[12/09/2024 13:31] cloudellie
+ℹ️ Wardens, FYI we've added @jvr0x, Mantra's SC engineer, to the list of sponsor team members to tag in private threads if you have questions about the codebase.
+
+
+[12/10/2024 06:36] p0wd3r_
+@Delroy @mantra_man @jvr0x Can users transfer tokens created by the token factory through IBC?
+
+
+[12/10/2024 08:55] del.roy
+Yes you can
+
+{Reactions}
+👌 
+
+[12/18/2024 12:24] nmirchev8
+Hey, sponsors
+Can you see the private thread?
+
+
+[12/23/2024 21:57] cloudellie (pinned)
+@🐺Wardens Since this audit includes live code, a reminder about [Code4rena's "live criticals" policy](https://docs.code4rena.com/awarding/incentive-model-and-awards#the-live-criticals-exception), which outlines how C4 handles disclosures of critical/high-severity bugs in deployed code.
+
+- The code in scope for this audit is Mantrachain v1.0.2
+- Release history: https://github.com/MANTRA-Chain/mantrachain/releases
+
+
+[12/25/2024 14:09] kartoonjoy
+Pinned a message.
+
+
+[12/31/2024 07:11] iam_emptyset
+.
+
+
+[01/06/2025 12:44] philipoaksecurity_70249
+Hi everyone, for issues that we have submitted as a team to the helpdesk according to the ["live criticals" policy](https://docs.code4rena.com/awarding/incentive-model-and-awards#the-live-criticals-exception), two questions: 
+
+a) shall we keep the placeholder finding, or submit the full issue description now?
+b) does it matter who submitted the issues for any scoring purposes/leaderboards now or in the future (e.g. person A submitted, but person B and C from the team found the issue)?
+
+{Embed}
+https://docs.code4rena.com/awarding/incentive-model-and-awards
+Incentive model and awards | Code4rena
+
+
+[01/06/2025 13:12] bytes032
+a) preferably full so we can verify
+b) doesn't as long as its a team
+
+{Reactions}
+👍 
+
+[01/06/2025 14:44] cloudellie
+At the risk of contradicting @bytes032  -- please keep the placeholder finding only to ensure that any critical issues are kept private to the sponsor team and C4 staff only. 
+
+The @💁🏽Engagement Managers team will ensure that the full body of the finding is added once the sponsor team has had a chance to mitigate any critical issues.
+
+{Reactions}
+👍 
+
+[01/06/2025 14:44] bytes032
+oh sorry i misread this i thought its about the help desk
+
+{Reactions}
+👍 
+
+[01/06/2025 14:44] bytes032
+@CloudEllie is right apologies
+
+{Reactions}
+🤝 
+
+[01/06/2025 14:51] cloudellie
+screenshotting this evidence that I was once right 😂
+
+{Reactions}
+📸 (6) 😂 (4) 
+
+[01/06/2025 20:26] philipoaksecurity_70249
+Got it, thanks!
+
+
+[01/07/2025 01:02] C4
+**🚨 AUDIT ALERT**
+
+@wardens The **MANTRA Chain** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks.
+
+
+[01/07/2025 03:26] gxh6709
+good game
+
+{Reactions}
+👍 (3) 
+
+[01/16/2025 11:00] web3tycoon
+for anyone who understands slot0 in uniswap v3
+============================
+i have question for slot0, about how price can be affected lets say, i have a pair tokenA/tokenB, and tokenB in its ecosystem.. has functionality of flashminting..
+that is new tokens can be minted in large quantities.. use the tokens and then at the end of it all burn those tokens, 
+so my question is lets say we call flashmint in tokenB.. it mints new tokens in large quantities ..we then call slot0 to check price will slot0 be affected? by showing the effects of the minting new large quantities?
+
+
+[01/30/2025 15:13] gxh6709
+When does the PJQA phase start?
+
+
+[01/31/2025 20:11] ojaydev
+when do we get news?
+
+
+[02/09/2025 12:57] mgf15
+any update ?
+
+{Reactions}
+🇳 (2) 🇴 🇵 🇪 (2) 
+
+[02/12/2025 08:57] gxh6709
+any update ?
+
+
+[02/12/2025 08:57] gxh6709
+When does the PJQA phase start?
+
+
+[02/12/2025 08:57] gxh6709
+👀
+
+
+[02/12/2025 10:12] cloudellie
+should have an update in the next 1-2 days 🤞
+
+{Reactions}
+😘 
+
+[02/13/2025 12:08] cloudellie
+post-judging QA phase has begun (this status should also be visible in-app)
+
+{Reactions}
+👍 
+
+[02/13/2025 16:58] rodiontr
+Hi @CloudEllie
+
+
+[02/13/2025 16:59] rodiontr
+Is there any reason why a “potential sensitive issue” can’t be seen during pjqa ?
+
+
+[02/13/2025 16:59] rodiontr
+Or it’s judged separately
+
+
+[02/13/2025 17:01] cloudellie
+SR wardens should see the content via the comments
+
+{Reactions}
+👍 
+
+[02/13/2025 17:01] rodiontr
+Thanks
+
+{Reactions}
+👍 
+
+[02/19/2025 11:56] nmirchev8
+Results soon?
+
+{Reactions}
+👍 (3) 👀 (2) 
+
+[02/19/2025 13:38] lon9j1ng
+Results soon?
+
+{Reactions}
+👍 (3) 
+
+[02/20/2025 15:27] itsmetechjay
+🤑 🎉  Awards for **MANTRA Chain**:
+
+$31,416.55 USDC » @Bernd 
+$6,424.64 USDC  »@ABAIKUNANBAEV
+$2,431.36 USDC » OakSecurity (@Philip (Oak Security), @imxm, @sushiwushi, @christianvari) 
+$2,356.32 USDC  » @gxh191 GMT+8 
+$1,890.14 USDC » Egis_Security (@nmirchev8 and @deth) 
+$1,408.95 USDC » @p0wd3r 
+$1,231.31 USDC » @Bauchibred 
+$1,185.67 USDC » @isamjay 
+$1,034.01 USDC » @zhaojie 
+$421.05 USDC » @Rhaydden 
+
+🏁 Findings summary
+--------------------------------------—
+4 High risk findings
+4 Med risk findings
+34 wardens participated
+
+Top Hunter: berndartmueller
+Top Gatherer: berndartmueller
+Top QA report: gxh191
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+⚠️ Awardees, be sure to [complete your tax reporting info](https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process#tax-information-for-code4rena-contributors-wardens-judges-etc) if you haven't already. This must be completed within 30 days (i.e. before Friday, 21 March 2025) to receive your award distribution for this audit.
+
+The leaderboard will be updated at a later date with these audit results. 
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🔥 (6) 
+
+[02/20/2025 15:33] gxh6709
+https://tenor.com/view/pout-kiss-blowing-a-kiss-suspense-christian-bale-gif-16931550113965916217
+
+{Embed}
+https://tenor.com/view/pout-kiss-blowing-a-kiss-suspense-christian-bale-gif-16931550113965916217
+Code4rena - ARCHIVE-PUBLIC - mantra-chain-nov [1311080290801942678].txt_Files/pout-kiss-95572.png
+
+{Reactions}
+🔥 (5) 
+
+[02/20/2025 16:40] rodiontr
+congrats @Bernd !
+
+
+[02/20/2025 16:46] bernd_42
+Thanks! Congrats to your 2nd place! 🥈
+
+{Reactions}
+🔥 (2) 
+
+[02/20/2025 16:46] rodiontr
+ty
+
+
+[02/20/2025 18:41] zsystm
+Congrats guys.
+I couldn't see any vunerabilities when I review codes.
+Can't wait to see the report. I'd like to learn.
+
+{Reactions}
+👍 (2) 
+
+[03/07/2025 00:03] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted in 03/14/2025 23:01. Please make sure to grab anything you might need before then.
+
+
+[03/14/2025 20:09] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+
+==============================================================
+Exported 52 message(s)
+==============================================================
